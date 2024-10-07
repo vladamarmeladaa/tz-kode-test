@@ -26,6 +26,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	
 
 	connStr := fmt.Sprintf("postgres://%v:%v@%v:%v/%v?sslmode=%v", cfg.User, cfg.Password, cfg.Host, cfg.Port, cfg.DBName, cfg.SSLMode)
 	logger := setupLogger()
