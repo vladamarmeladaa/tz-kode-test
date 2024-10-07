@@ -1,0 +1,14 @@
+env: "prod"
+db_connection:
+  user: "root"
+  password: "1234"
+  host: "localhost"  
+  port: 5436
+  db_name: "notes_db"
+  sslmode: "disable"
+
+speller: "https://speller.yandex.net/services/spellservice.json/checkTexts"
+
+  
+# const connStr = "postgres://root:1234@localhost:5436/notes_db?sslmode=disable"
+# "172.20.0.2"

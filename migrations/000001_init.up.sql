@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS users (
+    user_id SERIAL PRIMARY KEY,
+    login VARCHAR(200) NOT NULL UNIQUE,
+	password VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS notes (
+	note_id SERIAL PRIMARY KEY,
+    title_note VARCHAR(100) NOT NULL,
+	text_note VARCHAR(200) NOT NULL,
+    userId INTEGER,
+    FOREIGN KEY (userId) REFERENCES users(user_id)
+);
