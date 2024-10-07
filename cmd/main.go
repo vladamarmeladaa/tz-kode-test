@@ -50,20 +50,11 @@ func main() {
 	r.HandleFunc("/sign-up", signUpUser.New(logger, storage, v)).Methods("POST")
 	r.HandleFunc("/login", signInUser.New(logger, storage, v)).Methods("POST")
 
-	// done := make(chan os.Signal, 1)
-	// signal.Notify(done, os.Interrupt, syscall.SIGINT, syscall.SIGTERM)
-
 	err = http.ListenAndServe(":8080", r)
 	if err != nil {
 		fmt.Println(err)
 		logger.Error("failed to start server")
 	}
-
-	// logger.Info("server started")
-
-	// <-done
-	// logger.Info("stopping server")
-
 }
 
 func setupLogger() *slog.Logger {
